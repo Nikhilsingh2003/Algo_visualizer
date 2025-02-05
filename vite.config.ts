@@ -36,8 +36,8 @@ export default defineConfig({
     outDir: 'docs',
   },
   server: {
-    host: '0.0.0.0',  // ✅ Allows external access (required for Render)
-    port: process.env.PORT || 5173,  // ✅ Uses Render’s assigned port
-    strictPort: true,  // Ensures Vite only runs if the specified port is available
+    host: '0.0.0.0',  // ✅ Required for Render to expose the server
+    port: Number(process.env.PORT) || 5173,  // ✅ Use Render’s assigned port
+    strictPort: true,  // Ensures Vite only runs if the port is available
   },
 });
